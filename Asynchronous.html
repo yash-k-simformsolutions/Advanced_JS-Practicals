@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Asynchrounous</title>
+    </head>
+    <body>
+        <h1>Asynchrounous</h1>
+        <script>
+
+            setTimeout(function(){
+                console.log("Let's Begin!");
+            }, 1000);
+
+            const data = fetch('https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png').then(function(){
+                console.log("Let's End.");
+            })
+        </script>
+    </body>
+</html>

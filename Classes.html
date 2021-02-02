@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Classes and Prototypes</title>
+    </head>
+    <body>
+        <h1>Classes and Prototypes</h1>
+        <script>
+            // Creating Object using Function
+            function createCandidate(name, branch, marks){
+                const newUser = {};
+                newUser.name = name;
+                newUser.branch = branch;
+                newUser.marks = marks;
+                newUser.markscounter = () => { 
+                    return newUser.marks++;
+                }
+                return newUser;
+            }
+
+            const user1 = createCandidate("yola", "IT", 88);
+            const user2 = createCandidate("yash", "CP", 95);
+            console.log(user1);
+            console.log(user2);
+
+            user1.markscounter();
+            user2.markscounter();
+
+            // Creating Object using Createobject
+            function createCandidate1(name, branch, marks){
+                const newUser1 = Object.create(markscounter1);
+                newUser1.name = name;
+                newUser1.branch = branch;
+                newUser1.marks = marks;
+                return newUser1;
+            }
+            
+            const markscounter1 = {
+                counter: function(){ this.marks++; },
+            };
+
+            const user3 = createCandidate1("tirth", "IT", 82);
+            const user4 = createCandidate1("meet", "EC", 79);
+            console.log(user3);
+            console.log(user4);
+
+            user3.counter();
+            
+            //Creating Object using new 
+            function createCandidate2(name, branch, marks){
+                this.name = name;
+                this.branch = branch;
+                this.marks = marks;
+            }
+
+            createCandidate2.prototype.counter1 = function(){ this.marks++; };
+
+            const user5 = new createCandidate2("akshit", "EE", 54);
+            const user6 = new   createCandidate2("param", "CH", 59);
+            console.log(user5);
+            console.log(user6);
+
+            user5.counter1();
+
+            //Class
+            class createCandidate3{
+                constructor(name, branch, marks){
+                    this.name = name;
+                    this.branch = branch;
+                    this.marks = marks;
+                }
+                counter2(){
+                    this.marks++;
+                }
+            }
+
+            const user7 = new createCandidate3("jeet", "ME", 90);
+            const user8 = new createCandidate3("manan", "MC", 95);
+            console.table(user7);
+            console.table(user8);
+
+            user7.counter2();
+
+        </script>
+    </body>
+</html>

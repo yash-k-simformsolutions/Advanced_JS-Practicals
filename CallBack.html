@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Callback and Higher Order Functions</title>
+    </head>
+    <body>
+        <h1>Callback and Higher Order Functions</h1>
+        <script>
+            function resultofMultiplication(array, multiplyby10){
+                finalArray = [];
+                for(let i=0; i<array.length; i++){
+                    finalArray.push(multiplyby10(array[i]));
+                }
+                return finalArray;
+            }
+
+            function multiplyby10(num){
+                return num * 10;
+            }
+
+            const result = resultofMultiplication([1, 2, 3], multiplyby10);
+        </script>
+    </body>
+</html>
